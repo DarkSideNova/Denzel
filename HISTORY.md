@@ -1,259 +1,487 @@
-1.6.18 / 2019-04-26
+1.16.2 / 2024-09-11
 ===================
 
-  * Fix regression passing request object to `typeis.is`
+* deps: encodeurl@~2.0.0
 
-1.6.17 / 2019-04-25
+1.16.1 / 2024-09-11
 ===================
 
-  * deps: mime-types@~2.1.24
-    - Add Apple file extensions from IANA
-    - Add extension `.csl` to `application/vnd.citationstyles.style+xml`
-    - Add extension `.es` to `application/ecmascript`
-    - Add extension `.nq` to `application/n-quads`
-    - Add extension `.nt` to `application/n-triples`
-    - Add extension `.owl` to `application/rdf+xml`
-    - Add extensions `.siv` and `.sieve` to `application/sieve`
-    - Add extensions from IANA for `image/*` types
-    - Add extensions from IANA for `model/*` types
-    - Add extensions to HEIC image types
-    - Add new mime types
-    - Add `text/mdx` with extension `.mdx`
-  * perf: prevent internal `throw` on invalid type
+* deps: send@0.19.0
 
-1.6.16 / 2018-02-16
+1.16.0 / 2024-09-10
 ===================
 
-  * deps: mime-types@~2.1.18
-    - Add `application/raml+yaml` with extension `.raml`
-    - Add `application/wasm` with extension `.wasm`
-    - Add `text/shex` with extension `.shex`
-    - Add extensions for JPEG-2000 images
-    - Add extensions from IANA for `message/*` types
-    - Add extension `.mjs` to `application/javascript`
-    - Add extension `.wadl` to `application/vnd.sun.wadl+xml`
-    - Add extension `.gz` to `application/gzip`
-    - Add glTF types and extensions
-    - Add new mime types
-    - Update extensions `.md` and `.markdown` to be `text/markdown`
-    - Update font MIME types
-    - Update `text/hjson` to registered `application/hjson`
+* Remove link renderization in html while redirecting
 
-1.6.15 / 2017-03-31
+
+1.15.0 / 2022-03-24
 ===================
 
-  * deps: mime-types@~2.1.15
-    - Add new mime types
+  * deps: send@0.18.0
+    - Fix emitted 416 error missing headers property
+    - Limit the headers removed for 304 response
+    - deps: depd@2.0.0
+    - deps: destroy@1.2.0
+    - deps: http-errors@2.0.0
+    - deps: on-finished@2.4.1
+    - deps: statuses@2.0.1
 
-1.6.14 / 2016-11-18
+1.14.2 / 2021-12-15
 ===================
 
-  * deps: mime-types@~2.1.13
-    - Add new mime types
+  * deps: send@0.17.2
+    - deps: http-errors@1.8.1
+    - deps: ms@2.1.3
+    - pref: ignore empty http tokens
 
-1.6.13 / 2016-05-18
+1.14.1 / 2019-05-10
 ===================
 
-  * deps: mime-types@~2.1.11
-    - Add new mime types
+  * Set stricter CSP header in redirect response
+  * deps: send@0.17.1
+    - deps: range-parser@~1.2.1
 
-1.6.12 / 2016-02-28
+1.14.0 / 2019-05-07
 ===================
 
-  * deps: mime-types@~2.1.10
-    - Add new mime types
-    - Fix extension of `application/dash+xml`
-    - Update primary extension for `audio/mp4`
+  * deps: parseurl@~1.3.3
+  * deps: send@0.17.0
+    - deps: http-errors@~1.7.2
+    - deps: mime@1.6.0
+    - deps: ms@2.1.1
+    - deps: statuses@~1.5.0
+    - perf: remove redundant `path.normalize` call
 
-1.6.11 / 2016-01-29
+1.13.2 / 2018-02-07
 ===================
 
-  * deps: mime-types@~2.1.9
-    - Add new mime types
+  * Fix incorrect end tag in redirects
+  * deps: encodeurl@~1.0.2
+    - Fix encoding `%` as last character
+  * deps: send@0.16.2
+    - deps: depd@~1.1.2
+    - deps: encodeurl@~1.0.2
+    - deps: statuses@~1.4.0
 
-1.6.10 / 2015-12-01
+1.13.1 / 2017-09-29
 ===================
 
-  * deps: mime-types@~2.1.8
-    - Add new mime types
+  * Fix regression when `root` is incorrectly set to a file
+  * deps: send@0.16.1
 
-1.6.9 / 2015-09-27
-==================
+1.13.0 / 2017-09-27
+===================
 
-  * deps: mime-types@~2.1.7
-    - Add new mime types
+  * deps: send@0.16.0
+    - Add 70 new types for file extensions
+    - Add `immutable` option
+    - Fix missing `</html>` in default error & redirects
+    - Set charset as "UTF-8" for .js and .json
+    - Use instance methods on steam to check for listeners
+    - deps: mime@1.4.1
+    - perf: improve path validation speed
 
-1.6.8 / 2015-09-04
-==================
+1.12.6 / 2017-09-22
+===================
 
-  * deps: mime-types@~2.1.6
-    - Add new mime types
+  * deps: send@0.15.6
+    - deps: debug@2.6.9
+    - perf: improve `If-Match` token parsing
+  * perf: improve slash collapsing
 
-1.6.7 / 2015-08-20
-==================
+1.12.5 / 2017-09-21
+===================
 
-  * Fix type error when given invalid type to match against
-  * deps: mime-types@~2.1.5
-    - Add new mime types
+  * deps: parseurl@~1.3.2
+    - perf: reduce overhead for full URLs
+    - perf: unroll the "fast-path" `RegExp`
+  * deps: send@0.15.5
+    - Fix handling of modified headers with invalid dates
+    - deps: etag@~1.8.1
+    - deps: fresh@0.5.2
 
-1.6.6 / 2015-07-31
-==================
+1.12.4 / 2017-08-05
+===================
 
-  * deps: mime-types@~2.1.4
-    - Add new mime types
+  * deps: send@0.15.4
+    - deps: debug@2.6.8
+    - deps: depd@~1.1.1
+    - deps: http-errors@~1.6.2
 
-1.6.5 / 2015-07-16
-==================
+1.12.3 / 2017-05-16
+===================
 
-  * deps: mime-types@~2.1.3
-    - Add new mime types
+  * deps: send@0.15.3
+    - deps: debug@2.6.7
 
-1.6.4 / 2015-07-01
-==================
+1.12.2 / 2017-04-26
+===================
 
-  * deps: mime-types@~2.1.2
-    - Add new mime types
+  * deps: send@0.15.2
+    - deps: debug@2.6.4
+
+1.12.1 / 2017-03-04
+===================
+
+  * deps: send@0.15.1
+    - Fix issue when `Date.parse` does not return `NaN` on invalid date
+    - Fix strict violation in broken environments
+
+1.12.0 / 2017-02-25
+===================
+
+  * Send complete HTML document in redirect response
+  * Set default CSP header in redirect response
+  * deps: send@0.15.0
+    - Fix false detection of `no-cache` request directive
+    - Fix incorrect result when `If-None-Match` has both `*` and ETags
+    - Fix weak `ETag` matching to match spec
+    - Remove usage of `res._headers` private field
+    - Support `If-Match` and `If-Unmodified-Since` headers
+    - Use `res.getHeaderNames()` when available
+    - Use `res.headersSent` when available
+    - deps: debug@2.6.1
+    - deps: etag@~1.8.0
+    - deps: fresh@0.5.0
+    - deps: http-errors@~1.6.1
+
+1.11.2 / 2017-01-23
+===================
+
+  * deps: send@0.14.2
+    - deps: http-errors@~1.5.1
+    - deps: ms@0.7.2
+    - deps: statuses@~1.3.1
+
+1.11.1 / 2016-06-10
+===================
+
+  * Fix redirect error when `req.url` contains raw non-URL characters
+  * deps: send@0.14.1
+
+1.11.0 / 2016-06-07
+===================
+
+  * Use status code 301 for redirects
+  * deps: send@0.14.0
+    - Add `acceptRanges` option
+    - Add `cacheControl` option
+    - Attempt to combine multiple ranges into single range
+    - Correctly inherit from `Stream` class
+    - Fix `Content-Range` header in 416 responses when using `start`/`end` options
+    - Fix `Content-Range` header missing from default 416 responses
+    - Ignore non-byte `Range` headers
+    - deps: http-errors@~1.5.0
+    - deps: range-parser@~1.2.0
+    - deps: statuses@~1.3.0
+    - perf: remove argument reassignment
+
+1.10.3 / 2016-05-30
+===================
+
+  * deps: send@0.13.2
+    - Fix invalid `Content-Type` header when `send.mime.default_type` unset
+
+1.10.2 / 2016-01-19
+===================
+
+  * deps: parseurl@~1.3.1
+    - perf: enable strict mode
+
+1.10.1 / 2016-01-16
+===================
+
+  * deps: escape-html@~1.0.3
+    - perf: enable strict mode
+    - perf: optimize string replacement
+    - perf: use faster string coercion
+  * deps: send@0.13.1
+    - deps: depd@~1.1.0
+    - deps: destroy@~1.0.4
+    - deps: escape-html@~1.0.3
+    - deps: range-parser@~1.0.3
+
+1.10.0 / 2015-06-17
+===================
+
+  * Add `fallthrough` option
+    - Allows declaring this middleware is the final destination
+    - Provides better integration with Express patterns
+  * Fix reading options from options prototype
+  * Improve the default redirect response headers
+  * deps: escape-html@1.0.2
+  * deps: send@0.13.0
+    - Allow Node.js HTTP server to set `Date` response header
+    - Fix incorrectly removing `Content-Location` on 304 response
+    - Improve the default redirect response headers
+    - Send appropriate headers on default error response
+    - Use `http-errors` for standard emitted errors
+    - Use `statuses` instead of `http` module for status messages
+    - deps: escape-html@1.0.2
+    - deps: etag@~1.7.0
+    - deps: fresh@0.3.0
+    - deps: on-finished@~2.3.0
+    - perf: enable strict mode
+    - perf: remove unnecessary array allocations
   * perf: enable strict mode
   * perf: remove argument reassignment
 
-1.6.3 / 2015-06-08
+1.9.3 / 2015-05-14
 ==================
 
-  * deps: mime-types@~2.1.1
-    - Add new mime types
-  * perf: reduce try block size
-  * perf: remove bitwise operations
+  * deps: send@0.12.3
+    - deps: debug@~2.2.0
+    - deps: depd@~1.0.1
+    - deps: etag@~1.6.0
+    - deps: ms@0.7.1
+    - deps: on-finished@~2.2.1
 
-1.6.2 / 2015-05-10
+1.9.2 / 2015-03-14
 ==================
 
-  * deps: mime-types@~2.0.11
-    - Add new mime types
+  * deps: send@0.12.2
+    - Throw errors early for invalid `extensions` or `index` options
+    - deps: debug@~2.1.3
 
-1.6.1 / 2015-03-13
+1.9.1 / 2015-02-17
 ==================
 
-  * deps: mime-types@~2.0.10
-    - Add new mime types
+  * deps: send@0.12.1
+    - Fix regression sending zero-length files
 
-1.6.0 / 2015-02-12
+1.9.0 / 2015-02-16
 ==================
 
-  * fix false-positives in `hasBody` `Transfer-Encoding` check
-  * support wildcard for both type and subtype (`*/*`)
+  * deps: send@0.12.0
+    - Always read the stat size from the file
+    - Fix mutating passed-in `options`
+    - deps: mime@1.3.4
 
-1.5.7 / 2015-02-09
+1.8.1 / 2015-01-20
 ==================
 
-  * fix argument reassignment
-  * deps: mime-types@~2.0.9
-    - Add new mime types
+  * Fix redirect loop in Node.js 0.11.14
+  * deps: send@0.11.1
+    - Fix root path disclosure
 
-1.5.6 / 2015-01-29
+1.8.0 / 2015-01-05
 ==================
 
-  * deps: mime-types@~2.0.8
-    - Add new mime types
+  * deps: send@0.11.0
+    - deps: debug@~2.1.1
+    - deps: etag@~1.5.1
+    - deps: ms@0.7.0
+    - deps: on-finished@~2.2.0
 
-1.5.5 / 2014-12-30
+1.7.2 / 2015-01-02
 ==================
 
-  * deps: mime-types@~2.0.7
-    - Add new mime types
-    - Fix missing extensions
-    - Fix various invalid MIME type entries
-    - Remove example template MIME types
-    - deps: mime-db@~1.5.0
+  * Fix potential open redirect when mounted at root
 
-1.5.4 / 2014-12-10
+1.7.1 / 2014-10-22
 ==================
 
-  * deps: mime-types@~2.0.4
-    - Add new mime types
-    - deps: mime-db@~1.3.0
+  * deps: send@0.10.1
+    - deps: on-finished@~2.1.1
 
-1.5.3 / 2014-11-09
+1.7.0 / 2014-10-15
 ==================
 
-  * deps: mime-types@~2.0.3
-    - Add new mime types
-    - deps: mime-db@~1.2.0
+  * deps: send@0.10.0
+    - deps: debug@~2.1.0
+    - deps: depd@~1.0.0
+    - deps: etag@~1.5.0
 
-1.5.2 / 2014-09-28
+1.6.5 / 2015-02-04
 ==================
 
-  * deps: mime-types@~2.0.2
-    - Add new mime types
-    - deps: mime-db@~1.1.0
+  * Fix potential open redirect when mounted at root
+    - Back-ported from v1.7.2
 
-1.5.1 / 2014-09-07
+1.6.4 / 2014-10-08
 ==================
 
-  * Support Node.js 0.6
-  * deps: media-typer@0.3.0
-  * deps: mime-types@~2.0.1
-    - Support Node.js 0.6
+  * Fix redirect loop when index file serving disabled
 
-1.5.0 / 2014-09-05
+1.6.3 / 2014-09-24
 ==================
 
- * fix `hasbody` to be true for `content-length: 0`
+  * deps: send@0.9.3
+    - deps: etag@~1.4.0
 
-1.4.0 / 2014-09-02
+1.6.2 / 2014-09-15
 ==================
 
- * update mime-types
+  * deps: send@0.9.2
+    - deps: depd@0.4.5
+    - deps: etag@~1.3.1
+    - deps: range-parser@~1.0.2
 
-1.3.2 / 2014-06-24
+1.6.1 / 2014-09-07
 ==================
 
- * use `~` range on mime-types
+  * deps: send@0.9.1
+    - deps: fresh@0.2.4
 
-1.3.1 / 2014-06-19
+1.6.0 / 2014-09-07
 ==================
 
- * fix global variable leak
+  * deps: send@0.9.0
+    - Add `lastModified` option
+    - Use `etag` to generate `ETag` header
+    - deps: debug@~2.0.0
 
-1.3.0 / 2014-06-19
+1.5.4 / 2014-09-04
 ==================
 
- * improve type parsing
+  * deps: send@0.8.5
+    - Fix a path traversal issue when using `root`
+    - Fix malicious path detection for empty string path
 
-   - invalid media type never matches
-   - media type not case-sensitive
-   - extra LWS does not affect results
-
-1.2.2 / 2014-06-19
+1.5.3 / 2014-08-17
 ==================
 
- * fix behavior on unknown type argument
+  * deps: send@0.8.3
 
-1.2.1 / 2014-06-03
+1.5.2 / 2014-08-14
 ==================
 
- * switch dependency from `mime` to `mime-types@1.0.0`
+  * deps: send@0.8.2
+    - Work around `fd` leak in Node.js 0.10 for `fs.ReadStream`
 
-1.2.0 / 2014-05-11
+1.5.1 / 2014-08-09
 ==================
 
- * support suffix matching:
+  * Fix parsing of weird `req.originalUrl` values
+  * deps: parseurl@~1.3.0
+  * deps: utils-merge@1.0.0
 
-   - `+json` matches `application/vnd+json`
-   - `*/vnd+json` matches `application/vnd+json`
-   - `application/*+json` matches `application/vnd+json`
-
-1.1.0 / 2014-04-12
+1.5.0 / 2014-08-05
 ==================
 
- * add non-array values support
- * expose internal utilities:
+  * deps: send@0.8.1
+    - Add `extensions` option
 
-   - `.is()`
-   - `.hasBody()`
-   - `.normalize()`
-   - `.match()`
-
-1.0.1 / 2014-03-30
+1.4.4 / 2014-08-04
 ==================
 
- * add `multipart` as a shorthand
+  * deps: send@0.7.4
+    - Fix serving index files without root dir
+
+1.4.3 / 2014-07-29
+==================
+
+  * deps: send@0.7.3
+    - Fix incorrect 403 on Windows and Node.js 0.11
+
+1.4.2 / 2014-07-27
+==================
+
+  * deps: send@0.7.2
+    - deps: depd@0.4.4
+
+1.4.1 / 2014-07-26
+==================
+
+  * deps: send@0.7.1
+    - deps: depd@0.4.3
+
+1.4.0 / 2014-07-21
+==================
+
+  * deps: parseurl@~1.2.0
+    - Cache URLs based on original value
+    - Remove no-longer-needed URL mis-parse work-around
+    - Simplify the "fast-path" `RegExp`
+  * deps: send@0.7.0
+    - Add `dotfiles` option
+    - deps: debug@1.0.4
+    - deps: depd@0.4.2
+
+1.3.2 / 2014-07-11
+==================
+
+  * deps: send@0.6.0
+    - Cap `maxAge` value to 1 year
+    - deps: debug@1.0.3
+
+1.3.1 / 2014-07-09
+==================
+
+  * deps: parseurl@~1.1.3
+    - faster parsing of href-only URLs
+
+1.3.0 / 2014-06-28
+==================
+
+  * Add `setHeaders` option
+  * Include HTML link in redirect response
+  * deps: send@0.5.0
+    - Accept string for `maxAge` (converted by `ms`)
+
+1.2.3 / 2014-06-11
+==================
+
+  * deps: send@0.4.3
+    - Do not throw un-catchable error on file open race condition
+    - Use `escape-html` for HTML escaping
+    - deps: debug@1.0.2
+    - deps: finished@1.2.2
+    - deps: fresh@0.2.2
+
+1.2.2 / 2014-06-09
+==================
+
+  * deps: send@0.4.2
+    - fix "event emitter leak" warnings
+    - deps: debug@1.0.1
+    - deps: finished@1.2.1
+
+1.2.1 / 2014-06-02
+==================
+
+  * use `escape-html` for escaping
+  * deps: send@0.4.1
+    - Send `max-age` in `Cache-Control` in correct format
+
+1.2.0 / 2014-05-29
+==================
+
+  * deps: send@0.4.0
+    - Calculate ETag with md5 for reduced collisions
+    - Fix wrong behavior when index file matches directory
+    - Ignore stream errors after request ends
+    - Skip directories in index file search
+    - deps: debug@0.8.1
+
+1.1.0 / 2014-04-24
+==================
+
+  * Accept options directly to `send` module
+  * deps: send@0.3.0
+
+1.0.4 / 2014-04-07
+==================
+
+  * Resolve relative paths at middleware setup
+  * Use parseurl to parse the URL from request
+
+1.0.3 / 2014-03-20
+==================
+
+  * Do not rely on connect-like environments
+
+1.0.2 / 2014-03-06
+==================
+
+  * deps: send@0.2.0
+
+1.0.1 / 2014-03-05
+==================
+
+  * Add mime export for back-compat
+
+1.0.0 / 2014-03-05
+==================
+
+  * Genesis from `connect`

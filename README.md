@@ -1,63 +1,56 @@
-# undefsafe
+# set-function-length <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
-Simple *function* for retrieving deep object properties without getting "Cannot read property 'X' of undefined"
+[![github actions][actions-image]][actions-url]
+[![coverage][codecov-image]][codecov-url]
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
 
-Can also be used to safely set deep values.
+[![npm badge][npm-badge-png]][package-url]
+
+Set a function’s length.
+
+Arguments:
+ - `fn`: the function
+ - `length`: the new length. Must be an integer between 0 and 2**32.
+ - `loose`: Optional. If true, and the length fails to be set, do not throw. Default false.
+
+Returns `fn`.
 
 ## Usage
 
-```js
-var object = {
-  a: {
-    b: {
-      c: 1,
-      d: [1,2,3],
-      e: 'remy'
-    }
-  }
-};
+```javascript
+var setFunctionLength = require('set-function-length');
+var assert = require('assert');
 
-console.log(undefsafe(object, 'a.b.e')); // "remy"
-console.log(undefsafe(object, 'a.b.not.found')); // undefined
+function zero() {}
+function one(_) {}
+function two(_, __) {}
+
+assert.equal(zero.length, 0);
+assert.equal(one.length, 1);
+assert.equal(two.length, 2);
+
+assert.equal(setFunctionLength(zero, 10), zero);
+assert.equal(setFunctionLength(one, 11), one);
+assert.equal(setFunctionLength(two, 12), two);
+
+assert.equal(zero.length, 10);
+assert.equal(one.length, 11);
+assert.equal(two.length, 12);
 ```
 
-Demo: [https://jsbin.com/eroqame/3/edit?js,console](https://jsbin.com/eroqame/3/edit?js,console)
-
-## Setting
-
-```js
-var object = {
-  a: {
-    b: [1,2,3]
-  }
-};
-
-// modified object
-var res = undefsafe(object, 'a.b.0', 10);
-
-console.log(object); // { a: { b: [10, 2, 3] } }
-console.log(res); // 1 - previous value
-```
-
-## Star rules in paths
-
-As of 1.2.0, `undefsafe` supports a `*` in the path if you want to search all of the properties (or array elements) for a particular element.
-
-The function will only return a single result, either the 3rd argument validation value, or the first positive match. For example, the following github data:
-
-```js
-const githubData = {
-        commits: [{
-          modified: [
-            "one",
-            "two"
-          ]
-        }, /* ... */ ]
-      };
-
-// first modified file found in the first commit
-console.log(undefsafe(githubData, 'commits.*.modified.0'));
-
-// returns `two` or undefined if not found
-console.log(undefsafe(githubData, 'commits.*.modified.*', 'two'));
-```
+[package-url]: https://npmjs.org/package/set-function-length
+[npm-version-svg]: https://versionbadg.es/ljharb/set-function-length.svg
+[deps-svg]: https://david-dm.org/ljharb/set-function-length.svg
+[deps-url]: https://david-dm.org/ljharb/set-function-length
+[dev-deps-svg]: https://david-dm.org/ljharb/set-function-length/dev-status.svg
+[dev-deps-url]: https://david-dm.org/ljharb/set-function-length#info=devDependencies
+[npm-badge-png]: https://nodei.co/npm/set-function-length.png?downloads=true&stars=true
+[license-image]: https://img.shields.io/npm/l/set-function-length.svg
+[license-url]: LICENSE
+[downloads-image]: https://img.shields.io/npm/dm/set-function-length.svg
+[downloads-url]: https://npm-stat.com/charts.html?package=set-function-length
+[codecov-image]: https://codecov.io/gh/ljharb/set-function-length/branch/main/graphs/badge.svg
+[codecov-url]: https://app.codecov.io/gh/ljharb/set-function-length/
+[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/ljharb/set-function-length
+[actions-url]: https://github.com/ljharb/set-function-length/actions
